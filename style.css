@@ -61,7 +61,7 @@ header, footer{
   
 @media (max-width: 600px) {
     .burger {
-      display: block; /* Скрыт на десктопе */
+      display: block; 
       position: absolute;
       top: 20px;
       right: 20px;
@@ -83,6 +83,13 @@ header, footer{
     }
     nav.active {
       display: flex;
+      background: #3498db;
+      z-index: 1;
+      width: 100%;
+      height: 50%;
+    }
+    nav a {
+      margin: 5px;
     }
 }
 
