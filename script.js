@@ -3,14 +3,24 @@ const burgerMenu = () => {
     const burger = document.createElement('div');
     burger.className = 'burger';
     burger.innerHTML = '☰';
+
     document.querySelector('header').prepend(burger);
     
     const nav = document.querySelector('nav');
+    const navLinks = nav.querySelectorAll('a');
+    
     burger.addEventListener('click', () => {
       nav.classList.toggle('active');
-      burger.classList.toggle('open');
+      burger.innerHTML = nav.classList.contains('active') ? '✕' : '☰';
     });
-  };
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            burger.innerHTML = '☰';
+        });
+    });
+};
   
   // Анимация при загрузке карточек
   const animateCards = () => {
